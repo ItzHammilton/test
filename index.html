@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventario & Facturación Pro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>InvFact Pro</h1>
+        <small>Gestión comercial</small>
+      </div>
+      <div class="session-card">
+        <p>Usuario actual</p>
+        <h3 id="currentUserName">-</h3>
+        <span id="currentUserRole" class="badge"></span>
+      </div>
+      <nav class="menu" id="menu"></nav>
+      <button id="logoutBtn" class="btn btn-outline">Cerrar sesión</button>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <h2 id="sectionTitle">Dashboard</h2>
+        <div id="topbarActions" class="topbar-actions"></div>
+      </header>
+      <section id="view" class="view"></section>
+    </main>
+  </div>
+
+  <section id="loginView" class="login-wrapper">
+    <form id="loginForm" class="card login-card">
+      <h2>Bienvenido</h2>
+      <p>Inicia sesión para administrar inventario y facturación.</p>
+      <label>
+        Usuario
+        <input type="text" id="loginUser" required placeholder="admin" />
+      </label>
+      <label>
+        Contraseña
+        <input type="password" id="loginPass" required placeholder="1234" />
+      </label>
+      <button class="btn" type="submit">Entrar</button>
+      <small class="hint">Usuarios demo: admin/1234, bodeguero/1234, cajero/1234.</small>
+    </form>
+  </section>
+
+  <template id="dashboardTemplate">
+    <div class="grid cols-4" id="metrics"></div>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Movimientos recientes</h3>
+        <div id="recentMovements" class="table-wrap"></div>
+      </div>
+      <div class="card">
+        <h3>Facturas recientes</h3>
+        <div id="recentInvoices" class="table-wrap"></div>
+      </div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
